@@ -1,0 +1,9 @@
+- [Estilo Java del usuario](feedback_java_estilo.md) — records para DTOs, Lombok (versión de Java: ver CLAUDE.md general)
+- [Español neutro](feedback_espanol_neutro.md) — usar tú/tienes/aquí, no voseo argentino, en toda claudehome
+- [Estado creditos_horizonte](creditos_horizonte_pendientes_clientes.md) — al 2026-10-26: producción en Railway, BD prod nueva, simulador PDF/ticket, desglose escalado; pendientes
+- [Rotar credenciales creditos_horizonte](creditos_horizonte_rotar_credenciales.md) — BD (trolley y metro), Nubefact, R2 expuestas en chat; rotar al terminar la config; CRYPTO_* solo con BD vacía
+- [Migraciones BD metro creditos_horizonte](creditos_horizonte_bd_migraciones_metro.md) — V011-V016 y V033 aplicadas en metro 2026-11-13; preguntar por prod (trolley) y DDL.txt/DATABASE.md
+- [Agentes/caja creditos_horizonte 2026-11-13](creditos_horizonte_agentes_caja_20261113.md) — cargo neto, ITF manual + saldo bancario obligatorio, balance DTOs, saldo esperado de caja; preguntas pendientes
+- [Estado actual creditos_horizonte](creditos_horizonte_caja_balance_general.md) — LEER PRIMERO al retomar: 2026-11-17 proxy sin commit, fix caja (redondeo 0.10, version opcional) sin commit/probar, pendientes de negocio
+- [Proyecto Quipu](quipu_proyecto.md) — app finanzas PWA; al retomar leer "Retomar aquí" en quipu/PROYECTO.md (fase 2 lista, falta push)
+- [Sincronización PC ↔ MacBook](sincronizacion_pc_laptop.md) — repos privados + ~/claudehome/sync.sh; trabajar en dev, main = producción

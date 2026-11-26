@@ -1,0 +1,8 @@
+/*
+!/.gitignore
+!/CLAUDE.md
+!/sync.sh
+!/claude/
+!/creditos_horizonte/
+/creditos_horizonte/*
+!/creditos_horizonte/CLAUDE.md
