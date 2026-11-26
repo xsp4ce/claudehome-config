@@ -1,4 +1,14 @@
 {
   "theme": "dark",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "permissions": {
+    "allow": [
+      "Bash(./sync.sh pull)",
+      "Bash(./sync.sh push)",
+      "Bash(./sync.sh status)",
+      "Bash(~/claudehome/sync.sh pull)",
+      "Bash(~/claudehome/sync.sh push)",
+      "Bash(~/claudehome/sync.sh status)"
+    ]
+  }
 }

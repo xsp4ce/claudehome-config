@@ -32,6 +32,23 @@ Estas reglas aplican siempre, en cualquier proyecto dentro de esta carpeta, salv
 - Nunca mostrar, loggear ni exponer contenido de archivos de credenciales/secretos (.env, keys, tokens, etc.).
 - Nunca incluir secretos en commits, en el log de auditoría ni en ninguna salida.
 
+## Varias máquinas (PC con WSL y MacBook)
+`claudehome` es el repo `claudehome-config` y se sincroniza entre máquinas con `./sync.sh setup|pull|push|status`. La memoria y `settings.json` de Claude viven en `claudehome/claude/` y se enlazan con symlinks.
+
+Al empezar una sesión:
+1. Si `~/.claude/projects/<ruta-de-claudehome-con-guiones>/memory` no existe o no es un symlink a `claudehome/claude/memory`, la máquina no está configurada: pedir al usuario que corra `! ./sync.sh setup` y luego leer `claude/memory/MEMORY.md` directamente.
+2. Al decir "vamos a trabajar en <proyecto>": pedir al usuario que corra `! ./sync.sh pull` antes de nada (el clasificador puede bloquearlo si lo corre Claude), luego leer la memoria del proyecto y retomar.
+3. Si faltan secretos (`creditos_horizonte/frontend/.env`, `creditos_horizonte/docs/credentials.txt`, `quipu/.env`), avisar; el usuario los copia por su cuenta. Nunca leerlos ni pedirlos por el chat.
+4. Requisitos: git con llave SSH en GitHub, JDK 21 (backend usa `mvnw`), Node 22. Si falta algo, avisar antes de instalar.
+
+Al terminar, recordar `! ./sync.sh push`.
+
+Reglas:
+- Rutas siempre relativas a `claudehome`, nunca de WSL, Windows ni `/Users/...`.
+- Todo lo de WSL (netsh portproxy, `\\wsl$`, Claude in Chrome que no funciona) aplica solo al PC.
+- En backend, frontend y quipu se trabaja en `dev`; `main` despliega a producción y nunca se hace push a `main` sin pedido explícito.
+- `audit.log` es local de cada máquina y no va a git.
+
 ## Log de auditoría
 Registrar cada comando ejecutado en `claudehome/audit.log` (texto plano, una línea por comando), con este formato:
 
